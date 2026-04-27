@@ -2,7 +2,7 @@
 
 This code uses MViT for DGCNN-based embedding image classification.
 
-Build the environment following [INSTALL.md](https://github.com/Z-702/MVIT_classification/blob/main/INSTALL.md).
+Build the environment following [INSTALL.md](https://github.com/Z-702/TractoFormer-MVIT-main/INSTALL.md).
 
 # Using DGCNN to Generate Embedding Images
 
