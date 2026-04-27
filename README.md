@@ -1,4 +1,4 @@
-## MViT Classification with DGCNN-based Embedding Images
+## MViT Classification with DTractoEmbedding Images
 
 This code uses MViT for DGCNN-based embedding image classification.
 
