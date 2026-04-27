@@ -8,7 +8,7 @@ Build the environment following [INSTALL.md](https://github.com/Z-702/TractoMFor
 
 Use [embed.py](https://github.com/Z-702/MVIT_classification/blob/main/embed.py) to generate embedding images from DTI inputs.
 
-The related codes are included in the `embed_tools` folder.
+The related codes are included in the [embed_tools](https://github.com/Z-702/TractoMFormer/tree/main/Spectral-embedding/embed_tools) folder.
 
 Some codes were originally from the `DeepWMA` folder, which can be found on each server. Therefore, there is no need to include them in this repository.
 
