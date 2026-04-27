@@ -1,10 +1,10 @@
-# MViT Classification with DGCNN-based Embedding Images
+## MViT Classification with DGCNN-based Embedding Images
 
 This code uses MViT for DGCNN-based embedding image classification.
 
 Build the environment following [INSTALL.md](https://github.com/Z-702/TractoMFormer_MVIT-classification/blob/main/TractoFormer-MVIT-main/INSTALL.md).
 
-# Using Spectral Embedding to Generate DTractoEmbedding Images
+## Using Spectral Embedding to Generate DTractoEmbedding Images
 
 Use [embed.py](https://github.com/Z-702/TractoMFormer/tree/main/Spectral-embedding) to generate embedding images from DTI inputs.
 
@@ -12,14 +12,14 @@ The related codes are included in the [embed_tools](https://github.com/Z-702/Tra
 
 Some codes were originally from the `DeepWMA` folder, which can be found on each server. Therefore, there is no need to include them in this repository.
 
-# Using Multiple Inputs for Model Training and Evaluation
+## Using Multiple Inputs for Model Training and Evaluation
 
 Multiple inputs, such as FA, MD, and density maps, are used to train and evaluate the model.
 
 1. For different datasets, change line 164 and line 169 in `./mvit/dataset/tractoembedding.py`.
 2. For model settings, edit the configuration file `./configs/MVITv2_mri.yaml`.
 
-# Editing the Modalities Used
+## Editing the Modalities Used
 
 1. Change line 146 in `./mvit/dataset/tractoembedding.py`.
 
@@ -31,7 +31,7 @@ for mode in ['FA1', 'density', 'trace1']:
 
 `IN_CHANS` should be set to the number of selected modalities.
 
-# Running the Code
+## Running the Code
 
 Execute the code as follows:
 
@@ -49,7 +49,7 @@ nohup python ./tools/main.py \
     > output_new500_v2.log 2>&1 &
 ```
 
-# CSV File Format
+## CSV File Format
 
 The CSV file should contain three columns:
 
@@ -69,7 +69,7 @@ The program supports multi-fold evaluation. Five-fold cross-validation is recomm
 
 `DATA_AUG_NUM` indicates the number of augmented samples used.
 
-# Data Path Format
+## Data Path Format
 
 The data path should follow this format:
 
@@ -93,10 +93,45 @@ By default, three resolutions are used:
 
 The resolution setting can be changed on line 64 of `./mvit/dataset/tractoembedding.py`.
 
+## Baseline Models
 
-## FC-1DCNN
-This folder contains the implementation of the FC-1DCNN model, which is designed for efficient one-dimensional convolutional tasks. It includes various configurations and examples of model training and evaluation.
+### FC-1DCNN - CNN-based Classification on Raw DTI Features
 
-## ResNet
-The ResNet folder encompasses the ResNet architecture implementations, showcasing deep residual networks that alleviate the vanishing gradient problem through skip connections for improved training across deeper networks.
+Predicts subject age/sex directly from diffusion measurements (FA, trace, fiber counts) using ensemble CNNs.
 
+**Key Features:**
+- Ensemble learning: one model per input feature
+- Multiple architectures: 1D-CNN, 2D-CNN, LeNet, 1.5D-CNN
+- 5-fold cross-validation with real-time Visdom visualization
+- Supports flexible feature selection and hemisphere combination
+
+**Quick Start:**
+```bash
+cd FC-1DCNN/dti
+nohup python main.py \
+  --data-path /data05/learn2reg/zixi/csv_CNP_150 \
+  --demographics-csv /data05/learn2reg/CNP_150_clean.csv \
+  --subject-col SUB_ID \
+  --dx-col DX_GROUP \
+  --MODEL 1D-CNN \
+  --INPUT-FEATURES trace1.Mean trace2.Mean \
+  --HEMISPHERES left-hemisphere right-hemisphere commissural \
+  --target sex \
+  --NUM_CLASSES 2 \
+  --LOSS CE \
+  --epochs 200 \
+  --L2 1e-4 \
+  > train_cnp_trace.log 2>&1 &
+
+### ResNet - Transfer Learning on Spectral Embedding Images
+Uses ResNet50 (ImageNet pre-trained) to classify embedding images for binary classification (PD vs Control).
+**Key Features:**
+-Pre-trained backbone with custom classifier head
+-Supports multiple modalities (FA, density, trace) and resolutions (80, 160, 320)
+-5-fold cross-validation with automatic model checkpointing
+-Flexible CSV-based fold assignmen
+
+**Quick Start:**
+```bash
+python dataloader.py
+CUDA_VISIBLE_DEVICES=1 nohup python run.py > train_FA1_160.log 2>&1 &
