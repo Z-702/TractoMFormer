@@ -1,0 +1,43 @@
+MVIT:
+  DROPPATH_RATE: 0.3
+  DEPTH: 5
+  DIM_MUL: [[1, 2.0], [3, 2.0], [5, 2.0]]
+  HEAD_MUL: [[1, 2.0], [3, 2.0], [5, 1.0]]
+  POOL_KVQ_KERNEL: [3, 3]
+  POOL_KV_STRIDE_ADAPTIVE: [4, 4]
+  POOL_Q_STRIDE: [[0, 1, 1], [1, 2, 2], [2, 1, 1], [3, 2, 2],[4, 1, 1]]
+  USE_MULTI_SCALE: True
+  CLS_EMBED_ON: True
+
+MODEL:
+  NUM_CLASSES: 2
+  IN_CHANS: 3
+  # LOSS_FUNC: bce_logit
+  # HEAD_ACT: sigmoid
+  DROPOUT_RATE: 0.4
+
+MIXUP:
+  ENABLE: True
+
+SOLVER:
+  BASE_LR_SCALE_NUM_SHARDS: True
+  BASE_LR: 0.00025
+  LR_POLICY: cosine
+  MAX_EPOCH: 200
+  WEIGHT_DECAY: 0.05
+  OPTIMIZING_METHOD: adamw
+  CLIP_GRAD_L2NORM: 1.0
+
+TRAIN:
+  DATASET: tractoembedding
+  CHECKPOINT_PERIOD: 5
+  EVAL_PERIOD: 5
+
+DATA:
+  TRAIN_CROP_SIZE: 320
+  TEST_CROP_SIZE: 320
+  NUM: 3
+  AUG_NUM: 1
+  MODE: fusion
+  MEAN: [0.079, 0.069]
+  STD: [0.197, 0.172]
