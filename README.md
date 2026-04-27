@@ -6,7 +6,7 @@ Build the environment following [INSTALL.md](https://github.com/Z-702/TractoMFor
 
 # Using DGCNN to Generate Embedding Images
 
-Use [embed.py](https://github.com/Z-702/MVIT_classification/blob/main/embed.py) to generate embedding images from DTI inputs.
+Use [embed.py](https://github.com/Z-702/TractoMFormer/tree/main/Spectral-embedding) to generate embedding images from DTI inputs.
 
 The related codes are included in the [embed_tools](https://github.com/Z-702/TractoMFormer/tree/main/Spectral-embedding/embed_tools) folder.
 
