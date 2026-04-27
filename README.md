@@ -4,7 +4,7 @@ This code uses MViT for DGCNN-based embedding image classification.
 
 Build the environment following [INSTALL.md](https://github.com/Z-702/TractoMFormer_MVIT-classification/blob/main/TractoFormer-MVIT-main/INSTALL.md).
 
-# Using DGCNN to Generate Embedding Images
+# Using Spectral Embedding to Generate DTractoEmbedding Images
 
 Use [embed.py](https://github.com/Z-702/TractoMFormer/tree/main/Spectral-embedding) to generate embedding images from DTI inputs.
 
@@ -92,3 +92,11 @@ By default, three resolutions are used:
 ```
 
 The resolution setting can be changed on line 64 of `./mvit/dataset/tractoembedding.py`.
+
+
+## FC-1DCNN
+This folder contains the implementation of the FC-1DCNN model, which is designed for efficient one-dimensional convolutional tasks. It includes various configurations and examples of model training and evaluation.
+
+## ResNet
+The ResNet folder encompasses the ResNet architecture implementations, showcasing deep residual networks that alleviate the vanishing gradient problem through skip connections for improved training across deeper networks.
+
