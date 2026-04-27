@@ -127,10 +127,10 @@ nohup python main.py \
 ### ResNet - Transfer Learning on Spectral Embedding Images
 Uses ResNet50 (ImageNet pre-trained) to classify embedding images for binary classification (PD vs Control).
 **Key Features:**
--Pre-trained backbone with custom classifier head
--Supports multiple modalities (FA, density, trace) and resolutions (80, 160, 320)
--5-fold cross-validation with automatic model checkpointing
--Flexible CSV-based fold assignmen
+- Pre-trained backbone with custom classifier head
+- Supports multiple modalities (FA, density, trace) and resolutions (80, 160, 320)
+- 5-fold cross-validation with automatic model checkpointing
+- Flexible CSV-based fold assignmen
 
 **Quick Start:**
 ```bash
