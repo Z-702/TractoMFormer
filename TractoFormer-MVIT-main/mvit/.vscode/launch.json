@@ -1,0 +1,38 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File with Arguments",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "${command:pickArgs}"
+        },
+        {
+            "name": "main-debug",
+            "python": "/home/junyi/.conda/envs/mvit/bin/python",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "tools/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "3"
+            },
+            "args": [
+                "--cfg", "configs/MVITv2_mri.yaml",
+                "DATA.PATH_TO_DATA_DIR", "./new_400_301_fine_useful.csv",
+                "NUM_GPUS", "0",
+                "TRAIN.BATCH_SIZE", "16",
+                "OUTPUT_DIR", "./outtemp",
+                "DATA_MODE", "fusion",
+                "DATA_AUG_NUM", "10",
+                "DATA_NUM", "1"
+            ]
+        }
+    ]
+}
