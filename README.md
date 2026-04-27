@@ -59,7 +59,7 @@ SUB_ID, DX_GROUP, fold
 
 The program supports multi-fold evaluation. Five-fold cross-validation is recommended.
 
-# Parameter Description
+## Parameter Description
 
 `DATA_NUM` indicates the utilized embedding locations:
 
@@ -122,6 +122,7 @@ nohup python main.py \
   --epochs 200 \
   --L2 1e-4 \
   > train_cnp_trace.log 2>&1 &
+```
 
 ### ResNet - Transfer Learning on Spectral Embedding Images
 Uses ResNet50 (ImageNet pre-trained) to classify embedding images for binary classification (PD vs Control).
@@ -135,3 +136,4 @@ Uses ResNet50 (ImageNet pre-trained) to classify embedding images for binary cla
 ```bash
 python dataloader.py
 CUDA_VISIBLE_DEVICES=1 nohup python run.py > train_FA1_160.log 2>&1 &
+```
