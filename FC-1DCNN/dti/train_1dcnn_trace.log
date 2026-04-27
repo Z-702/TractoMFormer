@@ -1,0 +1,1155 @@
+nohup: ignoring input
+WARNING:visdom:Setting up a new session...
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /env/main (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 756, in _send
+    return self._handle_post(
+           ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 720, in _handle_post
+    r = self.session.post(url, data=data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 640, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /env/main (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+INFO:visdom:Socket refused connection, running socketless
+ERROR:visdom:[Errno 111] Connection refused
+ERROR:websocket:[Errno 111] Connection refused - goodbye
+ERROR:websocket:error from callback <function Visdom.setup_socket.<locals>.on_close at 0x7539f5fed9e0>: Visdom.setup_socket.<locals>.on_close() takes 1 positional argument but 3 were given
+ERROR:visdom:Visdom.setup_socket.<locals>.on_close() takes 1 positional argument but 3 were given
+INFO:main:Args:Namespace(data_path='/data05/learn2reg/zixi/1DCNN/csv_HCP_1000', INPUT_FEATURES=['trace1.Mean', 'trace2.Mean'], HEMISPHERES=['left-hemisphere', 'right-hemisphere', 'commissural'], target='sex', FOLD_NUM=5, MODEL='1D-CNN', NUM_CLASSES=2, LOAD_PATH='C:\\Users\\admin\\PycharmProjects\\dti\\LOG\\{}.pkl', ensemble=True, epochs=200, batch_size=8, num_workers=2, display_batch=50, LOSS='CE', LR=0.01, L2=0.0001, RECORD_NAME='20260409-205623', demographics_csv='/data05/learn2reg/zixi/1DCNN/csv_HCP_1000/new_500.csv', subject_col='SUB_ID', dx_col='DX_GROUP')
+INFO:main:========== Fold 1/5 ==========
+INFO:dataset:[train] n_fold=0, total usable subjects=330
+INFO:dataset:[val] n_fold=0, total usable subjects=90
+INFO:main:Fold 1: train size = 330, val size = 90
+Exception in user code:
+------------------------------------------------------------
+INFO:main:--- training progress rate 0/42 ---
+/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/DTI/analyse.py:20: RuntimeWarning: invalid value encountered in scalar divide
+  p2 = round(P22 / (P20 + P21 + P22), 4)
+/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/DTI/analyse.py:21: RuntimeWarning: invalid value encountered in scalar divide
+  r0 = round(P00 / (P00 + P10 + P20), 4)
+/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/DTI/analyse.py:23: RuntimeWarning: invalid value encountered in scalar divide
+  r2 = round(P22 / (P02 + P12 + P22), 4)
+INFO:analyse:Loss:16.97089958190918, Correct:304/330(acc:0.9212), precison:nan/0.9212/nan, recall:0.0/1.0/nan, 
+INFO:main:--- training epoch 0 finish in 3.4966 seconds ---
+/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/DTI/analyse.py:18: RuntimeWarning: invalid value encountered in scalar divide
+  p0 = round(P00 / (P00 + P01 + P02), 4)
+INFO:analyse:Loss:0.8755000233650208, Correct:90/90(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- validation epoch finish in 1.0987 seconds ---
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /events (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 756, in _send
+    return self._handle_post(
+           ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 720, in _handle_post
+    r = self.session.post(url, data=data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 640, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /events (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+Fold 1 | best train_loss:16.97089958190918(1epoch) --- best t_metric:0.9212(1epoch) --- best val_metric:1.0(1epoch)
+Exception in user code:
+------------------------------------------------------------
+INFO:main:--- training progress rate 0/42 ---
+INFO:analyse:Loss:3.6874001026153564, Correct:330/330(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- training epoch 1 finish in 2.8921 seconds ---
+INFO:analyse:Loss:0.36660000681877136, Correct:90/90(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- validation epoch finish in 1.0604 seconds ---
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 756, in _send
+    return self._handle_post(
+           ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 720, in _handle_post
+    r = self.session.post(url, data=data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 640, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+Fold 1 | best train_loss:3.6874001026153564(2epoch) --- best t_metric:1.0(2epoch) --- best val_metric:1.0(1epoch)
+Exception in user code:
+------------------------------------------------------------
+INFO:main:--- training progress rate 0/42 ---
+INFO:analyse:Loss:2.39490008354187, Correct:330/330(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- training epoch 2 finish in 2.845 seconds ---
+INFO:analyse:Loss:0.2433999925851822, Correct:90/90(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- validation epoch finish in 1.0477 seconds ---
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 756, in _send
+    return self._handle_post(
+           ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 720, in _handle_post
+    r = self.session.post(url, data=data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 640, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+Fold 1 | best train_loss:2.39490008354187(3epoch) --- best t_metric:1.0(2epoch) --- best val_metric:1.0(1epoch)
+Exception in user code:
+------------------------------------------------------------
+INFO:main:--- training progress rate 0/42 ---
+INFO:analyse:Loss:1.627500057220459, Correct:330/330(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- training epoch 3 finish in 2.8936 seconds ---
+INFO:analyse:Loss:0.07090000063180923, Correct:90/90(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- validation epoch finish in 1.052 seconds ---
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 756, in _send
+    return self._handle_post(
+           ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 720, in _handle_post
+    r = self.session.post(url, data=data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 640, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+Fold 1 | best train_loss:1.627500057220459(4epoch) --- best t_metric:1.0(2epoch) --- best val_metric:1.0(1epoch)
+Exception in user code:
+------------------------------------------------------------
+INFO:main:--- training progress rate 0/42 ---
+INFO:analyse:Loss:1.4600000381469727, Correct:330/330(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- training epoch 4 finish in 2.9977 seconds ---
+INFO:analyse:Loss:0.16820000112056732, Correct:90/90(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- validation epoch finish in 1.0009 seconds ---
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 756, in _send
+    return self._handle_post(
+           ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 720, in _handle_post
+    r = self.session.post(url, data=data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 640, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+Fold 1 | best train_loss:1.4600000381469727(5epoch) --- best t_metric:1.0(2epoch) --- best val_metric:1.0(1epoch)
+Exception in user code:
+------------------------------------------------------------
+INFO:main:--- training progress rate 0/42 ---
+INFO:analyse:Loss:1.051900029182434, Correct:330/330(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- training epoch 5 finish in 2.8306 seconds ---
+INFO:analyse:Loss:0.039400000125169754, Correct:90/90(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- validation epoch finish in 0.9176 seconds ---
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 756, in _send
+    return self._handle_post(
+           ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 720, in _handle_post
+    r = self.session.post(url, data=data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 640, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+Fold 1 | best train_loss:1.051900029182434(6epoch) --- best t_metric:1.0(2epoch) --- best val_metric:1.0(1epoch)
+Exception in user code:
+------------------------------------------------------------
+INFO:main:--- training progress rate 0/42 ---
+INFO:analyse:Loss:0.8709999918937683, Correct:330/330(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- training epoch 6 finish in 3.0581 seconds ---
+INFO:analyse:Loss:0.1143999993801117, Correct:90/90(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- validation epoch finish in 1.023 seconds ---
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 756, in _send
+    return self._handle_post(
+           ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 720, in _handle_post
+    r = self.session.post(url, data=data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 640, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+Fold 1 | best train_loss:0.8709999918937683(7epoch) --- best t_metric:1.0(2epoch) --- best val_metric:1.0(1epoch)
+Exception in user code:
+------------------------------------------------------------
+INFO:main:--- training progress rate 0/42 ---
+INFO:analyse:Loss:0.7732999920845032, Correct:330/330(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- training epoch 7 finish in 2.9057 seconds ---
+INFO:analyse:Loss:0.028999999165534973, Correct:90/90(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- validation epoch finish in 0.8395 seconds ---
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 756, in _send
+    return self._handle_post(
+           ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 720, in _handle_post
+    r = self.session.post(url, data=data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 640, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+Fold 1 | best train_loss:0.7732999920845032(8epoch) --- best t_metric:1.0(2epoch) --- best val_metric:1.0(1epoch)
+Exception in user code:
+------------------------------------------------------------
+INFO:main:--- training progress rate 0/42 ---
+INFO:analyse:Loss:0.6541000008583069, Correct:330/330(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- training epoch 8 finish in 2.9671 seconds ---
+INFO:analyse:Loss:0.05420000106096268, Correct:90/90(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- validation epoch finish in 0.9885 seconds ---
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 756, in _send
+    return self._handle_post(
+           ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 720, in _handle_post
+    r = self.session.post(url, data=data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 640, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+Fold 1 | best train_loss:0.6541000008583069(9epoch) --- best t_metric:1.0(2epoch) --- best val_metric:1.0(1epoch)
+Exception in user code:
+------------------------------------------------------------
+INFO:main:--- training progress rate 0/42 ---
+INFO:analyse:Loss:0.590399980545044, Correct:330/330(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- training epoch 9 finish in 3.0204 seconds ---
+INFO:analyse:Loss:0.02410000003874302, Correct:90/90(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- validation epoch finish in 1.0147 seconds ---
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 756, in _send
+    return self._handle_post(
+           ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 720, in _handle_post
+    r = self.session.post(url, data=data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 640, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+Fold 1 | best train_loss:0.590399980545044(10epoch) --- best t_metric:1.0(2epoch) --- best val_metric:1.0(1epoch)
+Exception in user code:
+------------------------------------------------------------
+INFO:main:--- training progress rate 0/42 ---
+INFO:analyse:Loss:0.5284000039100647, Correct:330/330(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- training epoch 10 finish in 2.9415 seconds ---
+INFO:analyse:Loss:0.09260000288486481, Correct:90/90(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- validation epoch finish in 0.9363 seconds ---
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 756, in _send
+    return self._handle_post(
+           ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 720, in _handle_post
+    r = self.session.post(url, data=data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 640, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+Fold 1 | best train_loss:0.5284000039100647(11epoch) --- best t_metric:1.0(2epoch) --- best val_metric:1.0(1epoch)
+Exception in user code:
+------------------------------------------------------------
+INFO:main:--- training progress rate 0/42 ---
+INFO:analyse:Loss:0.5595999956130981, Correct:330/330(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- training epoch 11 finish in 2.9163 seconds ---
+INFO:analyse:Loss:0.046300001442432404, Correct:90/90(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- validation epoch finish in 1.0278 seconds ---
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 756, in _send
+    return self._handle_post(
+           ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 720, in _handle_post
+    r = self.session.post(url, data=data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 640, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+Fold 1 | best train_loss:0.5284000039100647(11epoch) --- best t_metric:1.0(2epoch) --- best val_metric:1.0(1epoch)
+Exception in user code:
+------------------------------------------------------------
+INFO:main:--- training progress rate 0/42 ---
+INFO:analyse:Loss:0.4668000042438507, Correct:330/330(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- training epoch 12 finish in 3.0275 seconds ---
+INFO:analyse:Loss:0.03620000183582306, Correct:90/90(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- validation epoch finish in 0.9458 seconds ---
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 756, in _send
+    return self._handle_post(
+           ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 720, in _handle_post
+    r = self.session.post(url, data=data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 640, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+Fold 1 | best train_loss:0.4668000042438507(13epoch) --- best t_metric:1.0(2epoch) --- best val_metric:1.0(1epoch)
+Exception in user code:
+------------------------------------------------------------
+INFO:main:--- training progress rate 0/42 ---
+INFO:analyse:Loss:0.4410000145435333, Correct:330/330(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- training epoch 13 finish in 2.9722 seconds ---
+INFO:analyse:Loss:0.03290000185370445, Correct:90/90(acc:1.0), precison:nan/1.0/nan, recall:nan/1.0/nan, 
+INFO:main:--- validation epoch finish in 1.0385 seconds ---
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1091, in _send_output
+    self.send(msg)
+  File "/data05/learn2reg/miniconda3/lib/python3.12/http/client.py", line 1035, in send
+    self.connect()
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 645, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 756, in _send
+    return self._handle_post(
+           ^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/visdom/__init__.py", line 720, in _handle_post
+    r = self.session.post(url, data=data)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 640, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 592, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/sessions.py", line 706, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data05/learn2reg/zixi/1DCNN/Connectome_based_prediction-main/dti/visdom_env/lib/python3.12/site-packages/requests/adapters.py", line 678, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8097): Max retries exceeded with url: /update (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8097): Failed to establish a new connection: [Errno 111] Connection refused"))
+Fold 1 | best train_loss:0.4410000145435333(14epoch) --- best t_metric:1.0(2epoch) --- best val_metric:1.0(1epoch)
+Exception in user code:
+------------------------------------------------------------
+INFO:main:--- training progress rate 0/42 ---

@@ -1,0 +1,8 @@
+args Namespace(data_path='/data05/learn2reg/zixi/1DCNN/csv_HCP_1000', INPUT_FEATURES=['FA1.Mean', 'FA2.Mean'], HEMISPHERES=['left-hemisphere', 'right-hemisphere', 'commissural'], target='sex', FOLD_NUM=5, MODEL='1D-CNN', NUM_CLASSES=2, LOAD_PATH='C:\\Users\\admin\\PycharmProjects\\dti\\LOG\\{}.pkl', ensemble=True, epochs=200, batch_size=8, num_workers=2, display_batch=50, LOSS='CE', LR=0.01, L2=0.0001, RECORD_NAME='20260409-000546', demographics_csv='/data05/learn2reg/zixi/1DCNN/csv_HCP_1000/new_500.csv', subject_col='SUB_ID', dx_col='DX_GROUP')
+Fold 1 | best_epoch 1 | best_val_acc 1.0 | best_val_loss 1.7883000373840332
+Fold 2 | best_epoch 1 | best_val_acc 1.0 | best_val_loss 1.9348000288009644
+Fold 3 | best_epoch 1 | best_val_acc 1.0 | best_val_loss 2.681299924850464
+Fold 4 | best_epoch 1 | best_val_acc 1.0 | best_val_loss 1.551900029182434
+Fold 5 | best_epoch 1 | best_val_acc 1.0 | best_val_loss 2.162899971008301
+5fold_acc_mean 1.0
+5fold_acc_std 0.0
