@@ -17,8 +17,6 @@ Build the environment following [INSTALL.md](https://github.com/Z-702/TractoMFor
 
 ---
 
-# TractoMFormer
-
 ## 2. Spectral Embedding for DTractoEmbedding Image Generation
 
 The first part of TractoMFormer is to generate DTractoEmbedding images from DTI inputs using the spectral embedding pipeline.
