@@ -1,10 +1,27 @@
-## MViT Classification with DTractoEmbedding Images
+# TractoMFormer: MViT Classification with DTractoEmbedding Images
 
-This code uses MViT for DGCNN-based embedding image classification.
+This repository provides the implementation of **TractoMFormer**, which performs subject-level classification based on DTractoEmbedding images generated from diffusion MRI tractography data.
+
+The overall pipeline contains two main parts:
+
+1. **Spectral Embedding / DTractoEmbedding Image Generation**
+2. **MViT-based Classification with Multiple Input Modalities**
+
+In addition, this repository also includes baseline models for comparison, including FC-1DCNN and ResNet-based classification methods.
+
+---
+
+## 1. Environment Setup
 
 Build the environment following [INSTALL.md](https://github.com/Z-702/TractoMFormer_MVIT-classification/blob/main/TractoFormer-MVIT-main/INSTALL.md).
 
-## Using Spectral Embedding to Generate DTractoEmbedding Images
+---
+
+# TractoMFormer
+
+## 2. Spectral Embedding for DTractoEmbedding Image Generation
+
+The first part of TractoMFormer is to generate DTractoEmbedding images from DTI inputs using the spectral embedding pipeline.
 
 Use [embed.py](https://github.com/Z-702/TractoMFormer/tree/main/Spectral-embedding) to generate embedding images from DTI inputs.
 
@@ -12,26 +29,57 @@ The related codes are included in the [embed_tools](https://github.com/Z-702/Tra
 
 Some codes were originally from the `DeepWMA` folder, which can be found on each server. Therefore, there is no need to include them in this repository.
 
-## Using Multiple Inputs for Model Training and Evaluation
+---
 
-Multiple inputs, such as FA, MD, and density maps, are used to train and evaluate the model.
+## 3. MViT-based Classification
 
-1. For different datasets, change line 164 and line 169 in `./mvit/dataset/tractoembedding.py`.
-2. For model settings, edit the configuration file `./configs/MVITv2_mri.yaml`.
+The second part of TractoMFormer uses MViT to perform classification based on the generated DTractoEmbedding images.
 
-## Editing the Modalities Used
+Multiple input modalities, such as FA, MD, and density maps, are used to train and evaluate the model.
 
-1. Change line 146 in `./mvit/dataset/tractoembedding.py`.
+### 3.1 Dataset and Configuration Settings
+
+For different datasets, change line 164 and line 169 in:
+
+```bash
+./mvit/dataset/tractoembedding.py
+```
+
+For model settings, edit the configuration file:
+
+```bash
+./configs/MVITv2_mri.yaml
+```
+
+### 3.2 Editing the Modalities Used
+
+To change the input modalities, modify line 146 in:
+
+```bash
+./mvit/dataset/tractoembedding.py
+```
+
+For example:
 
 ```python
 for mode in ['FA1', 'density', 'trace1']:
 ```
 
-2. Change the parameter `IN_CHANS` in `./configs/MVITv2_mri.yaml`.
+Then change the parameter `IN_CHANS` in:
+
+```bash
+./configs/MVITv2_mri.yaml
+```
 
 `IN_CHANS` should be set to the number of selected modalities.
 
-## Running the Code
+For example, if three modalities are used, set:
+
+```yaml
+IN_CHANS: 3
+```
+
+### 3.3 Running the Code
 
 Execute the code as follows:
 
@@ -49,7 +97,7 @@ nohup python ./tools/main.py \
     > output_new500_v2.log 2>&1 &
 ```
 
-## CSV File Format
+### 3.4 CSV File Format
 
 The CSV file should contain three columns:
 
@@ -59,7 +107,7 @@ SUB_ID, DX_GROUP, fold
 
 The program supports multi-fold evaluation. Five-fold cross-validation is recommended.
 
-## Parameter Description
+### 3.5 Parameter Description
 
 `DATA_NUM` indicates the utilized embedding locations:
 
@@ -69,7 +117,7 @@ The program supports multi-fold evaluation. Five-fold cross-validation is recomm
 
 `DATA_AUG_NUM` indicates the number of augmented samples used.
 
-## Data Path Format
+### 3.6 Data Path Format
 
 The data path should follow this format:
 
@@ -91,23 +139,38 @@ By default, three resolutions are used:
 ['sz80', 'sz160', 'sz320']
 ```
 
-The resolution setting can be changed on line 64 of `./mvit/dataset/tractoembedding.py`.
+The resolution setting can be changed on line 64 of:
 
-## Baseline Models
+```bash
+./mvit/dataset/tractoembedding.py
+```
 
-### FC-1DCNN - CNN-based Classification on Raw DTI Features
+---
 
-Predicts subject age/sex directly from diffusion measurements (FA, trace, fiber counts) using ensemble CNNs.
+# Baseline Models
 
-**Key Features:**
-- Ensemble learning: one model per input feature
-- Multiple architectures: 1D-CNN, 2D-CNN, LeNet, 1.5D-CNN
-- 5-fold cross-validation with real-time Visdom visualization
-- Supports flexible feature selection and hemisphere combination
+This repository also includes baseline methods for comparison with TractoMFormer.
 
-**Quick Start:**
+## 4. FC-1DCNN Baseline
+
+FC-1DCNN is a CNN-based baseline model that performs classification directly on raw DTI-derived tract features, such as FA, trace, and fiber count measurements.
+
+Different from TractoMFormer, this method does not use DTractoEmbedding images. Instead, it uses numerical tract features as input and trains CNN-based classifiers for subject-level prediction.
+
+### Key Features
+
+- Uses raw DTI-derived tract features as input
+- Supports feature selection, such as FA, trace, and fiber count
+- Supports different hemisphere settings, including left hemisphere, right hemisphere, and commissural streamlines
+- Supports several CNN-based architectures, such as 1D-CNN, 2D-CNN, LeNet, and 1.5D-CNN
+- Supports 5-fold cross-validation
+- Can be used for classification tasks such as sex classification or disease/control classification
+
+### Quick Start
+
 ```bash
 cd FC-1DCNN/dti
+
 nohup python main.py \
   --data-path /data05/learn2reg/zixi/csv_CNP_150 \
   --demographics-csv /data05/learn2reg/CNP_150_clean.csv \
@@ -124,16 +187,28 @@ nohup python main.py \
   > train_cnp_trace.log 2>&1 &
 ```
 
-### ResNet - Transfer Learning on Spectral Embedding Images
-Uses ResNet50 (ImageNet pre-trained) to classify embedding images for binary classification (PD vs Control).
-**Key Features:**
-- Pre-trained backbone with custom classifier head
-- Supports multiple modalities (FA, density, trace) and resolutions (80, 160, 320)
-- 5-fold cross-validation with automatic model checkpointing
-- Flexible CSV-based fold assignmen
+---
 
-**Quick Start:**
+## 5. ResNet Baseline
+
+The ResNet baseline performs classification using spectral embedding images. It uses a ResNet50 backbone pre-trained on ImageNet and replaces the final classifier head for the target classification task.
+
+Compared with TractoMFormer, this baseline uses a conventional CNN backbone instead of MViT. It is used to evaluate whether transformer-based multi-scale modeling can improve classification performance on DTractoEmbedding images.
+
+### Key Features
+
+- Uses spectral embedding images as input
+- Uses ResNet50 as the backbone network
+- Supports transfer learning with ImageNet pre-trained weights
+- Supports different modalities, such as FA, density, and trace
+- Supports different image resolutions, such as 80, 160, and 320
+- Supports 5-fold cross-validation
+- Automatically saves model checkpoints during training
+
+### Quick Start
+
 ```bash
 python dataloader.py
+
 CUDA_VISIBLE_DEVICES=1 nohup python run.py > train_FA1_160.log 2>&1 &
 ```
