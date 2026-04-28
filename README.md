@@ -149,7 +149,7 @@ The resolution setting can be changed on line 64 of:
 
 This repository also includes baseline methods for comparison with TractoMFormer.
 
-## 4. FC-1DCNN Baseline
+## 1. FC-1DCNN Baseline
 
 FC-1DCNN is a CNN-based baseline model that performs classification directly on raw DTI-derived tract features, such as FA, trace, and fiber count measurements.
 
@@ -187,7 +187,7 @@ nohup python main.py \
 
 ---
 
-## 5. ResNet Baseline
+## 2. ResNet Baseline
 
 The ResNet baseline performs classification using spectral embedding images. It uses a ResNet50 backbone pre-trained on ImageNet and replaces the final classifier head for the target classification task.
 
