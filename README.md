@@ -1,4 +1,4 @@
-# TractoMFormer: MViT Classification with DTractoEmbedding Images
+# TractoMFormer: MViT Classification with DTractoEmbedding Images as inputs
 
 This repository provides the implementation of **TractoMFormer**, which performs subject-level classification based on DTractoEmbedding images generated from diffusion MRI tractography data.
 
